@@ -2,6 +2,7 @@
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useState } from 'react'
+import { router } from 'expo-router'
 import { mockArtists } from '../../data/mock'
 import { ArtistRow } from '../../components/ArtistRow'
 import { FilterChips } from '../../components/FilterChips'
@@ -34,15 +35,17 @@ export default function Artists() {
         data={filtered}
         keyExtractor={(item) => item.id}
         renderItem={({ item, index }) => (
-          <ArtistRow
-            rank={index + 1}
-            name={item.name}
-            genre={item.genre}
-            count={item.count}
-            maxCount={maxCount}
-            status={item.status}
-            emoji={item.emoji}
-          />
+          <TouchableOpacity onPress={() => router.push(`/artist/${item.id}`)}>
+            <ArtistRow
+              rank={index + 1}
+              name={item.name}
+              genre={item.genre}
+              count={item.count}
+              maxCount={maxCount}
+              status={item.status}
+              emoji={item.emoji}
+            />
+          </TouchableOpacity>
         )}
       />
     </SafeAreaView>
