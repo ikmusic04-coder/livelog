@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "livelog",
+    "slug": "livelog",
+    "version": "1.0.0",
+    "scheme": "livelog",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#1c1a1f"
+    },
+    "ios": { "supportsTablet": false },
+    "android": { "adaptiveIcon": { "backgroundColor": "#1c1a1f" } },
+    "plugins": ["expo-router"],
+    "experiments": { "typedRoutes": true }
+  }
+}
